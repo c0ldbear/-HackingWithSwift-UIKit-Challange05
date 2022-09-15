@@ -15,6 +15,3 @@ struct Country: Codable {
     var size: String?
 }
 
-struct Countries: Codable {
-    var results: [Country]
-}
