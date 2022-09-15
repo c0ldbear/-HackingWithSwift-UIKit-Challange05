@@ -24,6 +24,7 @@ class CountryNamesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Countries"
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +40,13 @@ class CountryNamesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = CountryDetailViewController()
+        let country = countries[indexPath.row]
+        vc.name = country.name
+        vc.captial = country.capital
+        vc.size = country.size
+        vc.population = country.population
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
