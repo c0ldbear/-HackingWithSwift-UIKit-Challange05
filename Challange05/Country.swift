@@ -9,12 +9,12 @@ import Foundation
 
 struct Country: Codable {
     var name: String
-    var info: [CountryInfo]
+    var capital: String?
+    var population: String?
+    var currency: String?
+    var size: String?
 }
 
-struct CountryInfo: Codable {
-    var capital: String
-    var size: String
-    var population: String
-    var currency: String
+struct Countries: Codable {
+    var results: [Country]
 }
