@@ -14,17 +14,9 @@ class CountryNamesViewController: UITableViewController {
     override func loadView() {
         super.loadView()
         
-        if let fileUrl = filePathCountriesJson(),
+        if let fileUrl = loadCountriesJson(),
            let data = try? Data(contentsOf: fileUrl) {
-            print(data)
-            do {
-                let jsonData = try JSONDecoder().decode(Countries.self, from: data)
-                print(jsonData)
-                countries = jsonData.results
-            } catch {
-                print("Could not load json data")
-                print(error)
-            }
+            countries = parse(data)
         }
         
     }
@@ -50,10 +42,21 @@ class CountryNamesViewController: UITableViewController {
 
 extension CountryNamesViewController {
     // Get the 'countries.json' file path
-    func filePathCountriesJson() -> URL? {
+    func loadCountriesJson() -> URL? {
         if let filePath = Bundle.main.path(forResource: "countryNames", ofType: "json") {
             return URL(fileURLWithPath: filePath)
         }
         return nil
+    }
+    
+    func parse(_ data: Data) -> [Country] {
+            do {
+                let jsonData = try JSONDecoder().decode(Countries.self, from: data)
+                return jsonData.results
+            } catch {
+                print("Could not load json data")
+                print(error)
+            }
+        return [Country]()
     }
 }
