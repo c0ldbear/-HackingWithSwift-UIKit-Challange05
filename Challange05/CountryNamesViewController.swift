@@ -8,10 +8,15 @@
 import UIKit
 
 class CountryNamesViewController: UITableViewController {
-
+    
+    override func loadView() {
+        super.loadView()
+        // load file: countries.json
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
