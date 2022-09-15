@@ -1,0 +1,25 @@
+{
+[
+	{"name": "Sweden",
+	"info": {
+		"capital": "Stockholm",
+		"population": "10462498",
+		"size": "447425.16km2",
+		"currency": "SEK"
+	}},
+	{"name": "Denmark",
+	"info": {
+		"capital": "Copenhagen",
+		"population": "10000",
+		"size": "1239km2",
+		"currency": "DKK"
+	}},
+	{"name": "Norway",
+	"info": {
+		"capital": "Oslo",
+		"population": "200000",
+		"size": "9321km2",
+		"currency": "NOK"
+	}}
+]
+}
