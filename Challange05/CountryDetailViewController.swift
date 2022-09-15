@@ -25,7 +25,6 @@ class CountryDetailViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
 
@@ -45,7 +44,6 @@ class CountryDetailViewController: UITableViewController {
     }
     
     @objc func shareTapped() {
-        print("SHARING IS CARING")
         let vc = UIActivityViewController(activityItems: ["Here's some fun fact about \(self.name!)", "Capital: \(self.captial!), Population: \(self.population!), Size: \(self.size!)"], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(vc, animated: true)
